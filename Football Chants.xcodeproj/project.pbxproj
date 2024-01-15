@@ -36,6 +36,9 @@
 		9B204D5E2B4D685B006A8586 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B204D5D2B4D685B006A8586 /* Team.swift */; };
 		9B204D602B4D68C3006A8586 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B204D5F2B4D68C3006A8586 /* Manager.swift */; };
 		9B204D632B4D697A006A8586 /* TeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B204D622B4D697A006A8586 /* TeamsViewModel.swift */; };
+		9B7CC7A32B55234900046439 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CC7A22B55234900046439 /* TeamTableViewCell.swift */; };
+		9B7CC7A52B55366400046439 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CC7A42B55366400046439 /* Assets.swift */; };
+		9B7CC7A72B55578C00046439 /* AudioManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CC7A62B55578C00046439 /* AudioManagerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		9B204D5D2B4D685B006A8586 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		9B204D5F2B4D68C3006A8586 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		9B204D622B4D697A006A8586 /* TeamsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsViewModel.swift; sourceTree = "<group>"; };
+		9B7CC7A22B55234900046439 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
+		9B7CC7A42B55366400046439 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		9B7CC7A62B55578C00046439 /* AudioManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManagerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,7 @@
 		9B204D142B4D2C18006A8586 /* Football Chants */ = {
 			isa = PBXGroup;
 			children = (
+				9B7CC7A12B5522F000046439 /* Views */,
 				9B204D612B4D697A006A8586 /* ViewModel */,
 				9B204D5C2B4D6849006A8586 /* Model */,
 				9B204D592B4D56C9006A8586 /* ViewControllers */,
@@ -121,6 +128,7 @@
 			children = (
 				9B204D2E2B4D5568006A8586 /* Chants */,
 				9B204D422B4D5568006A8586 /* Teams.swift */,
+				9B7CC7A42B55366400046439 /* Assets.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -172,8 +180,17 @@
 			isa = PBXGroup;
 			children = (
 				9B204D622B4D697A006A8586 /* TeamsViewModel.swift */,
+				9B7CC7A62B55578C00046439 /* AudioManagerViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9B7CC7A12B5522F000046439 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9B7CC7A22B55234900046439 /* TeamTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +287,12 @@
 				9B204D632B4D697A006A8586 /* TeamsViewModel.swift in Sources */,
 				9B204D602B4D68C3006A8586 /* Manager.swift in Sources */,
 				9B204D562B4D5568006A8586 /* Teams.swift in Sources */,
+				9B7CC7A32B55234900046439 /* TeamTableViewCell.swift in Sources */,
+				9B7CC7A72B55578C00046439 /* AudioManagerViewModel.swift in Sources */,
 				9B204D162B4D2C18006A8586 /* AppDelegate.swift in Sources */,
 				9B204D5E2B4D685B006A8586 /* Team.swift in Sources */,
 				9B204D182B4D2C18006A8586 /* SceneDelegate.swift in Sources */,
+				9B7CC7A52B55366400046439 /* Assets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

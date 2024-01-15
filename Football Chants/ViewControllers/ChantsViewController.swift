@@ -17,8 +17,13 @@ class ChantsViewController: UIViewController {
         tv.estimatedRowHeight = 44
         tv.separatorStyle = .none
         tv.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tv.register(TeamTableViewCell.self, forCellReuseIdentifier: TeamTableViewCell.cellId)
         return tv
     }()
+    
+    //
+    private lazy var teamViewModel = TeamsViewModel()
+    private lazy var audioManagerViewModel = AudioManagerViewModel()
 
     //LIFECYCLE
     override func loadView() {
@@ -30,8 +35,10 @@ class ChantsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = .systemBlue
+        self.view.backgroundColor = .white
     }
+    
+    
     
 
    
@@ -40,8 +47,12 @@ class ChantsViewController: UIViewController {
 private extension ChantsViewController{
     
     func setUp(){
+        //
+        self.navigationController?.navigationBar.topItem?.title = "Football Chants"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        //
         tableView.dataSource = self
-        
+        //
         self.view.addSubview(tableView)
         //
         NSLayoutConstraint.activate([
@@ -50,30 +61,29 @@ private extension ChantsViewController{
             tableView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
         ])
-        
-        
     }
 }
 
 extension ChantsViewController:UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return  3
-    }
+    
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return  teamViewModel.teams.count
+        }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        switch indexPath.row{
-        case 0:
-            cell.backgroundColor = .systemTeal
-        case 1:
-            cell.backgroundColor = .systemGray
-        case 2:
-            cell.backgroundColor = .systemPink
-        default:
-            break
-        }
-        
+        let team = teamViewModel.teams[indexPath.row]//teamViewModel.teams[0]
+        let cell = tableView.dequeueReusableCell(withIdentifier: TeamTableViewCell.cellId, for: indexPath) as! TeamTableViewCell
+        cell.configure(team,delegate: self)
         return cell
+        
     }
-    
+}
+
+extension ChantsViewController:TeamTableViewCellDelegate{
+    func didTapPlayback(for team: Team) {
+        audioManagerViewModel.playAudio(team: team)
+        teamViewModel.togglePlayBack(team: team)
+        tableView.reloadData()
+        print("ChantsViewController Team name: \(team.name)")
+    }
 }
